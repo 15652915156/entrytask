@@ -1,0 +1,1156 @@
+{
+	"info": {
+		"_postman_id": "07fe1d73-53cd-48a6-813c-f0c7f6d30069",
+		"name": "entrytask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "82b8c721-2a91-46a6-8534-9152b52b9a5d",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.1 is jones\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=1&b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:5000/shopee/test?b=2&a=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"shopee",
+								"test"
+							],
+							"query": [
+								{
+									"key": "b",
+									"value": "2"
+								},
+								{
+									"key": "a",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "81",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Sep 2018 09:32:38 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0",
+							"name": "Server",
+							"description": "A name for the server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error_code\": 0, \n  \"error_messag\": \"success\", \n  \"reference\": \"NO.1 is 2\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "交换a&b的位置",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0849424-4179-47ae-8502-a8d5f5b9e158",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.1 is jones\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?b=jones&a=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "b",
+							"value": "jones"
+						},
+						{
+							"key": "a",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "task2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:5000/shopee/test",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"shopee",
+								"test"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "96",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Sep 2018 09:25:27 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0",
+							"name": "Server",
+							"description": "A name for the server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error_code\": 21, \n  \"error_messag\": \"empty or wrong params\", \n  \"reference\": \"entrytest\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "a是str类型",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f705f280-42cb-4053-a6ff-7d9d8c5c8bb7",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=jones&b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "jones"
+						},
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a缺失",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "395410b2-8c6b-49e1-890d-06d20293d4a6",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a为空",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "926db001-4794-4e5c-b2dc-0538ca6aebb0",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a&b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": null
+						},
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b缺失",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db1620d8-7d71-4eff-8fc2-49782318170e",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b为空",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "42e69b6d-c03d-4652-83dd-67fdfa6117fa",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.1 is \"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=1&b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a&b同时缺失",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30d88615-0c81-4636-8b33-dd268c1a2045",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a&b同时为空",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e7dcee3-0ca1-4a5a-b1c8-e66c260a40c9",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a&b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": null
+						},
+						{
+							"key": "b",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a越界（正数）",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dde7d1af-3364-4f85-a690-541c05e00c05",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.2147483648 is jones\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=2147483648&b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "2147483648"
+						},
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a为负数",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4653fee-eb94-4461-82f6-7614bd676195",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.-100 is \\\"jones\\\"\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=-100&b=\"jones\"",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "-100"
+						},
+						{
+							"key": "b",
+							"value": "\"jones\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a越界（负数）",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be47c31a-ce96-4b52-8060-042715e90ac3",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.-2147483649 is jones\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=-2147483649&b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "-2147483649"
+						},
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a为float",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87d87e85-1db4-4277-a8ae-1dd8cbc4f46f",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==21 && res.error_message==\"empty or wrong params\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=1.1&b=jones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1.1"
+						},
+						{
+							"key": "b",
+							"value": "jones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b为int",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc3bd375-5ce2-4373-8281-584508054401",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.1 is 1\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=1&b=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b为float",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f548e6f3-dc5c-4890-8ff5-e574e16867ab",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.1 is 1.1\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=1&b=1.1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "1.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b为中文",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "11ab6803-1ea8-40a3-bf36-d0b527000bc6",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.10 is 中文\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=10&b=中文",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "10"
+						},
+						{
+							"key": "b",
+							"value": "中文"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "参数前有空格",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "889bcb5e-d196-4c91-853c-8fe54bbc11a5",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==11 && res.error_message==\"system error\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test  ?a=123&b=shopee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test  "
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "123"
+						},
+						{
+							"key": "b",
+							"value": "shopee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "url错误",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0d33c74-9e61-43c3-b513-683ef8a4c8fc",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==11 && res.error_message==\"system error\" && res.reference==\"entrytest\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee?a=1234&b=entrytask",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1234"
+						},
+						{
+							"key": "b",
+							"value": "entrytask"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b参数后面有空格",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "802f0c5b-6e10-478d-96c5-d4ef7ff0989f",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.12 is shopee\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=12&b=shopee    ",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "12"
+						},
+						{
+							"key": "b",
+							"value": "shopee    "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a参数后面有空格",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee830c72-146f-4e42-b9f4-f4fab7093ce6",
+						"type": "text/javascript",
+						"exec": [
+							"var res=JSON.parse(responseBody);",
+							"if (res.error_code==0 && res.error_message==\"success\" && res.reference==\"NO.11 is shopee\"){",
+							"    tests[\"pass\"+\" error_code:\"+res.error_code+\" error_message:\"+res.error_message+\" reference:\"+res.reference]=true;",
+							"}",
+							"else{",
+							"    tests[\"fail\"]=false;",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shopee/test?a=11   &b=shopee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "11   "
+						},
+						{
+							"key": "b",
+							"value": "shopee"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
